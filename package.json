@@ -1,0 +1,16 @@
+{
+  "name": "onemore-v2",
+  "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "dev": "pnpm --parallel --stream --filter app --filter server dev",
+    "dev:app": "pnpm --filter app dev",
+    "dev:server": "pnpm --filter server dev",
+    "start": "pnpm --filter app start",
+    "lint": "pnpm -r lint",
+    "build": "pnpm --filter server build",
+    "test": "pnpm --filter server test",
+    "test:e2e": "pnpm --filter server test:e2e",
+    "format": "pnpm --filter server format"
+  }
+}
