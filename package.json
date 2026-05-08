@@ -12,7 +12,9 @@
     "typecheck": "pnpm --filter app typecheck && pnpm --filter server typecheck",
     "check": "pnpm lint:check && pnpm typecheck && pnpm test",
     "build": "pnpm --filter server build",
-    "test": "pnpm --filter server test",
+    "test": "pnpm --filter server test && pnpm --filter app test",
+    "test:app": "pnpm --filter app test",
+    "test:server": "pnpm --filter server test",
     "test:e2e": "pnpm --filter server test:e2e",
     "format": "pnpm --filter server format"
   }
