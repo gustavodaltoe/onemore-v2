@@ -1,0 +1,25 @@
+[constraints]
+max_cycles = 0
+max_coupling = "B"
+max_cc = 25
+no_god_files = true
+
+[[layers]]
+name = "app"
+paths = ["app/app/*", "app/components/*", "app/hooks/*", "app/constants/*"]
+order = 0
+
+[[layers]]
+name = "server"
+paths = ["server/src/*", "server/test/*"]
+order = 1
+
+[[boundaries]]
+from = "app/*"
+to = "server/src/*"
+reason = "Frontend must not depend on backend internals"
+
+[[boundaries]]
+from = "server/src/*"
+to = "app/*"
+reason = "Backend must not depend on frontend internals"

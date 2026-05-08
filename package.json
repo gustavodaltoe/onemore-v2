@@ -16,6 +16,7 @@
     "test:app": "pnpm --filter app test",
     "test:server": "pnpm --filter server test",
     "test:e2e": "pnpm --filter server test:e2e",
-    "format": "pnpm --filter server format"
+    "format": "pnpm --filter server format",
+    "sentrux:check": "sentrux check ."
   }
 }

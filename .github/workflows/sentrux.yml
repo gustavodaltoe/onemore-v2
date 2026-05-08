@@ -1,0 +1,39 @@
+name: Sentrux
+
+on:
+  pull_request:
+    paths:
+      - app/**
+      - server/**
+      - .sentrux/**
+      - .github/workflows/sentrux.yml
+      - '*'
+      - '.*'
+  push:
+    branches:
+      - main
+    paths:
+      - app/**
+      - server/**
+      - .sentrux/**
+      - .github/workflows/sentrux.yml
+      - '*'
+      - '.*'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install sentrux
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/sentrux/sentrux/main/install.sh | sh
+
+      - name: Run sentrux rules
+        run: sentrux check .
