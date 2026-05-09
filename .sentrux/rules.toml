@@ -6,20 +6,20 @@ no_god_files = true
 
 [[layers]]
 name = "app"
-paths = ["app/app/*", "app/components/*", "app/hooks/*", "app/constants/*"]
+paths = ["app/app/**", "app/components/**", "app/hooks/**", "app/constants/**"]
 order = 0
 
 [[layers]]
 name = "server"
-paths = ["server/src/*", "server/test/*"]
+paths = ["server/src/**", "server/test/**"]
 order = 1
 
 [[boundaries]]
-from = "app/*"
-to = "server/src/*"
+from = "app/**"
+to = "server/**"
 reason = "Frontend must not depend on backend internals"
 
 [[boundaries]]
-from = "server/src/*"
-to = "app/*"
+from = "server/**"
+to = "app/**"
 reason = "Backend must not depend on frontend internals"
