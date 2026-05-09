@@ -17,6 +17,12 @@
     "test:server": "pnpm --filter server test",
     "test:e2e": "pnpm --filter server test:e2e",
     "format": "pnpm --filter server format",
-    "sentrux:check": "sentrux check ."
+    "sentrux:check": "sentrux check .",
+    "sentrux:gate": "sentrux gate .",
+    "prepare": "husky",
+    "check:sentrux:baseline": "./scripts/sentrux-gate-guard.sh"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }
